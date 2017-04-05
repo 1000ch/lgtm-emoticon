@@ -8,17 +8,44 @@
   <body>
     <div class="container">
       <h1>Emoticon LGTM Generator</h1>
-      <input id="emoticon-input" class="input-block" placeholder="Input emoticon name..." />
-      <div class="columns">
-        <div class="one-half column">
-          <h2>Light Background</h2>
-          <textarea id="light-output" class="input-block" rows="20"></textarea>
-        </div>
-        <div class="one-half column">
-          <h2>Dark Background</h2>
-          <textarea id="dark-output" class="input-block" rows="20"></textarea>
-        </div>
-      </div>
+      <form>
+        <dl class="form-group">
+          <dt>
+            <label for="foreground">Foreground</label>
+          </dt>
+          <dd>
+            <input
+              id="foreground"
+              class="form-control input-block"
+              placeholder="Input emoticon name..."
+              value="squirrel" />
+          </dd>
+        </dl>
+        <dl class="form-group">
+          <dt>
+            <label for="foreground">Background</label>
+          </dt>
+          <dd>
+            <input
+              id="background"
+              class="form-control input-block"
+              placeholder="Input emoticon name..."
+              value="white_large_square" />
+          </dd>
+        </dl>
+        <dl class="form-group">
+          <dt>
+            <label for="output">Output</label>
+          </dt>
+          <dd>
+            <textarea
+              id="output"
+              class="form-control input-block"
+              rows="20">
+            </textarea>
+          </dd>
+        </dl>
+      </form>
     </div>
     <script src="app.js"></script>
   </body>

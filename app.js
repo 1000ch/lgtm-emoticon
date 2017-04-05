@@ -1,36 +1,30 @@
-const darkTemplate = `:black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square:
-:black_large_square::squirrel::black_large_square::black_large_square::black_large_square::squirrel::squirrel::squirrel::squirrel::black_large_square::squirrel::squirrel::squirrel::black_large_square::squirrel::black_large_square::black_large_square::black_large_square::squirrel::black_large_square:
-:black_large_square::squirrel::black_large_square::black_large_square::black_large_square::squirrel::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::squirrel::black_large_square::black_large_square::squirrel::squirrel::black_large_square::squirrel::squirrel::black_large_square:
-:black_large_square::squirrel::black_large_square::black_large_square::black_large_square::squirrel::black_large_square::squirrel::squirrel::black_large_square::black_large_square::squirrel::black_large_square::black_large_square::squirrel::black_large_square::squirrel::black_large_square::squirrel::black_large_square:
-:black_large_square::squirrel::black_large_square::black_large_square::black_large_square::squirrel::black_large_square::black_large_square::squirrel::black_large_square::black_large_square::squirrel::black_large_square::black_large_square::squirrel::black_large_square::black_large_square::black_large_square::squirrel::black_large_square:
-:black_large_square::squirrel::squirrel::squirrel::black_large_square::squirrel::squirrel::squirrel::squirrel::black_large_square::black_large_square::squirrel::black_large_square::black_large_square::squirrel::black_large_square::black_large_square::black_large_square::squirrel::black_large_square:
-:black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square::black_large_square:`;
-const lightTemplate = `:white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square:
-:white_large_square::squirrel::white_large_square::white_large_square::white_large_square::squirrel::squirrel::squirrel::squirrel::white_large_square::squirrel::squirrel::squirrel::white_large_square::squirrel::white_large_square::white_large_square::white_large_square::squirrel::white_large_square:
-:white_large_square::squirrel::white_large_square::white_large_square::white_large_square::squirrel::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::squirrel::white_large_square::white_large_square::squirrel::squirrel::white_large_square::squirrel::squirrel::white_large_square:
-:white_large_square::squirrel::white_large_square::white_large_square::white_large_square::squirrel::white_large_square::squirrel::squirrel::white_large_square::white_large_square::squirrel::white_large_square::white_large_square::squirrel::white_large_square::squirrel::white_large_square::squirrel::white_large_square:
-:white_large_square::squirrel::white_large_square::white_large_square::white_large_square::squirrel::white_large_square::white_large_square::squirrel::white_large_square::white_large_square::squirrel::white_large_square::white_large_square::squirrel::white_large_square::white_large_square::white_large_square::squirrel::white_large_square:
-:white_large_square::squirrel::squirrel::squirrel::white_large_square::squirrel::squirrel::squirrel::squirrel::white_large_square::white_large_square::squirrel::white_large_square::white_large_square::squirrel::white_large_square::white_large_square::white_large_square::squirrel::white_large_square:
-:white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square:`;
-
-const replaceDark = emociton => darkTemplate.replace(/squirrel/g, emociton);
-const replaceLight = emociton => lightTemplate.replace(/squirrel/g, emociton);
+const template = `:background::background::background::background::background::background::background::background::background::background::background::background::background::background::background::background::background::background::background::background:
+:background::foreground::background::background::background::foreground::foreground::foreground::foreground::background::foreground::foreground::foreground::background::foreground::background::background::background::foreground::background:
+:background::foreground::background::background::background::foreground::background::background::background::background::background::foreground::background::background::foreground::foreground::background::foreground::foreground::background:
+:background::foreground::background::background::background::foreground::background::foreground::foreground::background::background::foreground::background::background::foreground::background::foreground::background::foreground::background:
+:background::foreground::background::background::background::foreground::background::background::foreground::background::background::foreground::background::background::foreground::background::background::background::foreground::background:
+:background::foreground::foreground::foreground::background::foreground::foreground::foreground::foreground::background::background::foreground::background::background::foreground::background::background::background::foreground::background:
+:background::background::background::background::background::background::background::background::background::background::background::background::background::background::background::background::background::background::background::background:`;
 
 window.onload = e => {
-  const emoticonInput  = document.querySelector('#emoticon-input');
-  const darkOutput = document.querySelector('#dark-output');
-  const lightOutput = document.querySelector('#light-output');
+  const foreground = document.querySelector('#foreground');
+  const background = document.querySelector('#background');
+  const output  = document.querySelector('#output');
 
-  darkOutput.value = darkTemplate;
-  lightOutput.value = lightTemplate;
-  emoticonInput.addEventListener('input', e => {
-    darkOutput.value = replaceDark(emoticonInput.value);
-    lightOutput.value = replaceLight(emoticonInput.value);
-  });
+  const replace = () => {
+    output.value = template
+      .replace(/foreground/g, foreground.value)
+      .replace(/background/g, background.value);
+  };
+
+  foreground.addEventListener('input', replace);
+  background.addEventListener('input', replace);
+
+  replace();
 };
 
 if (navigator.serviceWorker) {
   navigator.serviceWorker.register('service-worker.js', {
-    scope: '/lgtm-emoticon/'
+    scope: location.pathname
   }).catch(error => console.error(error));
 }

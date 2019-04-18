@@ -2,13 +2,26 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>lgtm-emoticon</title>
+    <title>word-emoticon</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/primer/2.7.0/primer.css">
   </head>
   <body>
     <div class="container">
-      <h1>Emoticon LGTM Generator</h1>
+      <h1>Emoticon Word Generator</h1>
       <form>
+          <dl class="form-group">
+            <dt>
+              <label for="word">Word (up to 4 characters)</label> <span id="alert" style="color: red"></span>
+            </dt>
+            <dd>
+              <input
+                id="word"
+                class="form-control input-block"
+                placeholder="Input up to 4 letters..."
+                maxlength="4"
+                value="lgtm" />
+            </dd>
+          </dl>
         <dl class="form-group">
           <dt>
             <label for="foreground">Foreground</label>

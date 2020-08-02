@@ -1,3 +1,5 @@
+import { documentReady } from 'https://unpkg.com/html-ready';
+
 const template = `:background::background::background::background::background::background::background::background::background::background::background::background::background::background::background::background::background::background::background::background:
 :background::foreground::background::background::background::foreground::foreground::foreground::foreground::background::foreground::foreground::foreground::background::foreground::background::background::background::foreground::background:
 :background::foreground::background::background::background::foreground::background::background::background::background::background::foreground::background::background::foreground::foreground::background::foreground::foreground::background:
@@ -6,7 +8,7 @@ const template = `:background::background::background::background::background::b
 :background::foreground::foreground::foreground::background::foreground::foreground::foreground::foreground::background::background::foreground::background::background::foreground::background::background::background::foreground::background:
 :background::background::background::background::background::background::background::background::background::background::background::background::background::background::background::background::background::background::background::background:`;
 
-window.onload = e => {
+documentReady.then(() => {
   const foreground = document.querySelector('#foreground');
   const background = document.querySelector('#background');
   const output  = document.querySelector('#output');
@@ -21,4 +23,4 @@ window.onload = e => {
   background.addEventListener('input', replace);
 
   replace();
-};
+});

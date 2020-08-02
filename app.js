@@ -22,9 +22,3 @@ window.onload = e => {
 
   replace();
 };
-
-if (navigator.serviceWorker) {
-  navigator.serviceWorker.register('service-worker.js', {
-    scope: location.pathname
-  }).catch(error => console.error(error));
-}
